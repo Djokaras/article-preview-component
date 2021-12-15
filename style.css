@@ -1,38 +1,3 @@
-/* # Front-end Style Guide
-
-## Layout
-
-The designs were created to the following widths:
-
-- Mobile: 375px
-- Desktop: 1440px
-
-## Colors
-
-- Very Dark Grayish Blue: hsl(217, 19%, 35%)
-- Desaturated Dark Blue: hsl(214, 17%, 51%)
-- Grayish Blue: hsl(212, 23%, 69%)
-- Light Grayish Blue: hsl(210, 46%, 95%)
-
-## Typography
-
-### Body Copy
-
-- Font size: 13px
-
-### Headings
-
-- Family: [Manrope](https://fonts.google.com/specimen/Manrope)
-- Weights: 500, 700
-
-## Icons
-
-We provide SVGs for the social icons. But please feel free to use a font icon library if you like. Some suggestions can be found below:
-
-- [Font Awesome](https://fontawesome.com)
-- [IcoMoon](https://icomoon.io)
-- [Ionicons](https://ionicons.com) */
-
 :root {
 	--very-darkgrayblue-: hsl(217, 19%, 35%);
 	--desaturated-darkblue: hsl(214, 17%, 51%);
@@ -41,12 +6,196 @@ We provide SVGs for the social icons. But please feel free to use a font icon li
 }
 
 * {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
+
+body {
+	font-family: 'Manrope', sans-serif;
+	background-color: var(--light-grayishblue-);
+	min-height: 100vh;
+	display: grid;
+	grid-template-rows: 1fr auto;
+}
+
+.main {
+	display: flex;
+	padding: 0 1.4rem 0 1.4rem;
+	align-items: center;
+	justify-content: center;
+}
+
+.card {
+	border-radius: 1rem;
+	overflow: hidden;
+	background-color: #fff;
+	margin-bottom: 3rem;
+	box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.05);
+	max-width: 20rem;
+}
+
+.description {
+	padding: 0 2rem 0 2rem;
+	margin-bottom: 2rem;
+}
+
+.wrap-social {
+	position: relative;
+}
+
+.social-footer {
+	display: flex;
+	padding: 1rem 2rem 1rem 2rem;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.share-footer {
+	display: none;
+	position: absolute;
+	background-color: var(--very-darkgrayblue-);
+	padding: 1rem 2rem 1rem 2rem;
+	justify-content: space-between;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	animation: fadeIn 0.2s ease-in-out;
+}
+
+.share-section {
+	display: flex;
+	gap: 0.8rem;
+	align-items: center;
+}
+
+.share-text {
+	font-size: 0.8rem;
+	color: var(--grayish-blue);
+	text-transform: uppercase;
+	letter-spacing: 0.4rem;
+	margin-right: 0.2rem;
+}
+
+.active {
+	display: flex;
+}
+
+.profile {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	font-size: 0.8rem;
+}
+
+.card-heading {
+	font-size: 1rem;
+	font-weight: 700;
+	color: var(--very-darkgrayblue-);
+	line-height: 1.3;
+	margin-bottom: 1rem;
+}
+
+.card-text {
+	font-size: 0.9rem;
+	font-weight: 500;
+	color: var(--desaturated-darkblue);
+}
+
+.profile-name {
+	color: var(--very-darkgrayblue-);
+	font-weight: 700;
+	margin-bottom: 0.1rem;
+}
+
+.profile-date {
+	color: var(--grayish-blue);
+}
+
+.profile-picture {
+	width: 2.6rem;
+	border-radius: 50%;
+}
+
+.icon-share,
+.icon-share--2nd {
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: none;
+	transition: fill 0.25s ease-in-out, background-color 0.25s ease-in-out;
+}
+
+.icon-share {
+	background-color: var(--light-grayishblue-);
+	fill: var(--desaturated-darkblue);
+}
+
+.icon-share--2nd {
+	background-color: var(--desaturated-darkblue);
+	fill: var(--light-grayishblue-);
+}
+
+.icon-share:hover {
+	cursor: pointer;
+	background-color: var(--desaturated-darkblue);
+	fill: var(--light-grayishblue-);
+}
+
+.icon-share--2nd:hover {
+	cursor: pointer;
+	background-color: var(--light-grayishblue-);
+	fill: var(--desaturated-darkblue);
+}
+
+.img-cover {
+	width: 100%;
+	margin-bottom: 1.2rem;
+}
+
+/* Attribution */
 
 .attribution {
 	font-size: 11px;
 	text-align: center;
+	padding: 1rem 0 1rem 0;
 }
 .attribution a {
 	color: hsl(228, 45%, 44%);
 }
+
+@media (min-width: 55em) {
+	.card {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		max-width: 60rem;
+	}
+
+	.card-heading {
+		font-size: 1.4rem;
+	}
+
+	.img-cover {
+		grid-row: span 2;
+		margin-bottom: 0;
+	}
+
+	.description {
+		grid-column: 2/-1;
+		padding-top: 2rem;
+	}
+
+	.social-footer {
+		padding: 1rem 2rem 1rem 2rem;
+		align-items: center;
+		height: 100%;
+	}
+
+	.wrap-social {
+		grid-column: 2/-1;
+	}
+} ;
